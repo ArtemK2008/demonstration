@@ -28,14 +28,18 @@ public class SuggestedAnswer extends Answer {
   public void voteFor() {
     this.setVotesCount(this.getVotesCount() + 1);
     if (votesCount >= myQuestion.getVotesToBeChanged()) {
-      String previousBestAnswer = myQuestion.getBestAnswer().getText();
-      myQuestion.getBestAnswer().setText(this.getText());
-      this.setText(previousBestAnswer);
+      swapAnswer();
       this.setVotesCount(0);
       reduceAllOtherVotesByHalf();
       myQuestion.setVotesToBeChanged(myQuestion.getVotesToBeChanged() * 2);
 
     }
+  }
+
+  private void swapAnswer() {
+    String previousBestAnswer = myQuestion.getBestAnswer().getText();
+    myQuestion.getBestAnswer().setText(this.getText());
+    this.setText(previousBestAnswer);
   }
 
   private void reduceAllOtherVotesByHalf() {

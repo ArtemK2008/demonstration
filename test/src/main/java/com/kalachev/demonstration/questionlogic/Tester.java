@@ -47,7 +47,7 @@ public class Tester {
           + " people voted for it");
     }
     System.out.println(
-        "current amount of votes need to change Question's Answer is : "
+        "current amount of votes needed to change Question's Answer is : "
             + question.getVotesToBeChanged());
     System.out.println("it should be 2 times more than before");
     System.out.println();
@@ -77,7 +77,7 @@ public class Tester {
     System.out.println(
         "Right now im 2x reducing all votes for suggested answers, but previous best answer starts at 0 ");
     System.out.println(
-        "current amount of votes need to change Question's Answer is : "
+        "current amount of votes needed to change Question's Answer is : "
             + question.getVotesToBeChanged());
     System.out.println("it should be 2 times more than before");
     System.out.println();
