@@ -56,7 +56,7 @@ public class Tester {
 
     System.out.println("lets vote again ");
     System.out.println(
-        "now we 8 8 times for all options, and 10 times for correct one");
+        "now we vote 8 times for all options, and 10 times for correct one");
 
     for (int i = 0; i < 8; i++) {
       answer1.voteFor();
