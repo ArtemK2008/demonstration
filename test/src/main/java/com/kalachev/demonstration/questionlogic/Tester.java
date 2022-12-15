@@ -54,15 +54,16 @@ public class Tester {
 
     System.out.println();
     System.out.println(
-        "Now we vote 8 times for all options, and 10 times for correct one");
+        "Now we vote 6 times for all options, and 10 times for correct one");
 
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 6; i++) {
       answer1.voteFor();
       answer2.voteFor();
       answer3.voteFor();
     }
-    answer1.voteFor();
-    answer1.voteFor();
+    for (int i = 0; i < 4; i++) {
+      answer1.voteFor();
+    }
     System.out.println("Let's see what has changed");
     System.out.println("The question is " + question.getQuestionText());
     System.out.println("Its Answer is " + question.getBestAnswer().getText());

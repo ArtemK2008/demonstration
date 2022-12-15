@@ -39,6 +39,8 @@ public class SuggestedAnswer extends Answer {
 
   private void swapAnswer() {
     String previousBestAnswer = myQuestion.getBestAnswer().getText();
+    System.out.println("Votes threshold reached! Swapping previous answer : "
+        + previousBestAnswer + "; with most voted answer : " + this.getText());
     myQuestion.getBestAnswer().setText(this.getText());
     this.setText(previousBestAnswer);
   }
