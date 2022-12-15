@@ -1,0 +1,54 @@
+package com.kalachev.demonstration.questionlogic;
+
+import java.util.List;
+
+public class SuggestedAnswer extends Answer {
+
+  private final Question myQuestion;
+  private int votesCount;
+
+  public SuggestedAnswer(Question myQuestion) {
+    super();
+    this.myQuestion = myQuestion;
+    this.votesCount = 0;
+  }
+
+  public Question getMyQuestion() {
+    return myQuestion;
+  }
+
+  public int getVotesCount() {
+    return votesCount;
+  }
+
+  public void setVotesCount(int votesCount) {
+    this.votesCount = votesCount;
+  }
+
+  public void voteFor() {
+    this.setVotesCount(this.getVotesCount() + 1);
+    if (votesCount >= myQuestion.getVotesToBeChanged()) {
+      String previousBestAnswer = myQuestion.getBestAnswer().getText();
+      myQuestion.getBestAnswer().setText(this.getText());
+      this.setText(previousBestAnswer);
+      this.setVotesCount(0);
+      reduceAllOtherVotesByHalf();
+      myQuestion.setVotesToBeChanged(myQuestion.getVotesToBeChanged() * 2);
+
+    }
+  }
+
+  private void reduceAllOtherVotesByHalf() {
+    List<SuggestedAnswer> candidateAnswers = myQuestion.getCandidateAnswers();
+    for (SuggestedAnswer answer : candidateAnswers) {
+      int countBefore = answer.getVotesCount();
+      answer.setVotesCount(countBefore / 2);
+    }
+
+  }
+
+  public void voteAgainst() {
+    this.setVotesCount(this.getVotesCount() - 1);
+  }
+
+}
