@@ -53,7 +53,15 @@ public class SuggestedAnswer extends Answer {
   }
 
   public void voteAgainst() {
+    System.out.println("Someone voted against answer : " + this.getText());
     this.setVotesCount(this.getVotesCount() - 1);
+    if (this.getVotesCount() < -10) {
+      deleteThisQuestion();
+    }
+  }
+
+  private void deleteThisQuestion() {
+    // TODO Auto-generated method stub
   }
 
 }
