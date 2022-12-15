@@ -33,7 +33,7 @@ public class Tester {
 
     ////
 
-    System.out.println("now we vote for other option ");
+    System.out.println("now we vote 5 times for other option ");
     for (int i = 0; i < 5; i++) {
       answer2.voteFor();
     }
@@ -49,12 +49,14 @@ public class Tester {
     System.out.println(
         "current amount of votes need to change Question's Answer is : "
             + question.getVotesToBeChanged());
-    System.out.println("it show be 2 times more than before");
+    System.out.println("it should be 2 times more than before");
     System.out.println();
 
     /////////////
 
     System.out.println("lets vote again ");
+    System.out.println(
+        "now we 8 8 times for all options, and 10 times for correct one");
 
     for (int i = 0; i < 8; i++) {
       answer1.voteFor();
@@ -73,9 +75,11 @@ public class Tester {
           + " people voted for it");
     }
     System.out.println(
+        "Right now im 2x reducing all votes for suggested answers, but previous best answer starts at 0 ");
+    System.out.println(
         "current amount of votes need to change Question's Answer is : "
             + question.getVotesToBeChanged());
-    System.out.println("it show be 2 times more than before");
+    System.out.println("it should be 2 times more than before");
     System.out.println();
   }
 }
