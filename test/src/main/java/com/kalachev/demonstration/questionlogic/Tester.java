@@ -41,7 +41,7 @@ public class Tester {
     System.out.println("The question is " + question.getQuestionText());
     System.out.println("Its Answer is " + question.getBestAnswer().getText());
     System.out
-        .println("Other peoples suggested those answer for this question :");
+        .println("Other people suggested those answer for this question :");
     for (SuggestedAnswer answer : question.getCandidateAnswers()) {
       System.out.println(answer.getText() + "     and " + answer.getVotesCount()
           + " people voted for it");
@@ -69,7 +69,7 @@ public class Tester {
     System.out.println("The question is " + question.getQuestionText());
     System.out.println("Its Answer is " + question.getBestAnswer().getText());
     System.out
-        .println("Other peoples suggested those answer for this question :");
+        .println("Other people suggested those answer for this question :");
     for (SuggestedAnswer answer : question.getCandidateAnswers()) {
       System.out.println(answer.getText() + "     and " + answer.getVotesCount()
           + " people voted for it");
