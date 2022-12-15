@@ -26,6 +26,7 @@ public class SuggestedAnswer extends Answer {
   }
 
   public void voteFor() {
+    System.out.println("Someone voted for answer : " + this.getText());
     this.setVotesCount(this.getVotesCount() + 1);
     if (votesCount >= myQuestion.getVotesToBeChanged()) {
       swapAnswer();
